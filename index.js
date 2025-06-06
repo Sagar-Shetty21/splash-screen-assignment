@@ -17,7 +17,7 @@ gsap.fromTo(
             gsap.to("#splash-text", {
                 delay: 0.6, // 0.6s animation + 0.6s wait = 4s total
                 opacity: 0,
-                duration: 1,
+                duration: 1.2,
                 ease: "power2.in",
             });
 
