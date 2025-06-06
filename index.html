@@ -9,6 +9,7 @@
         class="bg-neutral-950 h-screen w-screen flex flex-col gap-2 items-center justify-center overflow-hidden"
     >
         <svg
+            id="splash-logo-one"
             width="160"
             height="160"
             viewBox="0 0 200 200"
@@ -20,25 +21,121 @@
                 fill="white"
             />
         </svg>
+
         <svg
+            id="splash-logo-two"
             width="300"
             height="180"
             viewBox="0 0 300 180"
             xmlns="http://www.w3.org/2000/svg"
         >
-            <!-- Refined white shape: shorter, sharper bottom point -->
-            <path
-                d="M 0,0 C 90,0 130,60 150,150 C 170,60 210,0 300,0 L 0,0 Z"
+            <defs>
+                <clipPath id="clip-shape">
+                    <path
+                        d="M 0,0 C 90,0 130,60 150,150 C 170,60 210,0 300,0 L 300,0 L 0,0 Z"
+                    />
+                </clipPath>
+
+                <!-- Linear gradient from bottom-left to top-right -->
+                <linearGradient
+                    id="fill-gradient"
+                    x1="0%"
+                    y1="100%"
+                    x2="100%"
+                    y2="0%"
+                    gradientUnits="objectBoundingBox"
+                >
+                    <stop
+                        id="gradient-stop"
+                        offset="0%"
+                        stop-color="white"
+                        stop-opacity="1"
+                    />
+                    <stop offset="0%" stop-color="white" stop-opacity="0" />
+                </linearGradient>
+
+                <!-- Mask using the gradient -->
+                <mask id="fill-mask">
+                    <rect
+                        x="0"
+                        y="0"
+                        width="300"
+                        height="180"
+                        fill="url(#fill-gradient)"
+                    />
+                </mask>
+            </defs>
+
+            <!-- Shape that gets revealed by the mask -->
+            <rect
+                id="fill-rect"
+                x="0"
+                y="0"
+                width="300"
+                height="180"
                 fill="white"
+                clip-path="url(#clip-shape)"
+                mask="url(#fill-mask)"
+            />
+
+            <!-- Left curve: Top-left to bottom -->
+            <path
+                id="left-stroke"
+                d="M 150,150 C 130,60 90,0 0,0"
+                stroke="white"
+                fill="none"
+                stroke-width="2"
+            />
+
+            <!-- Right curve: Bottom to top-right -->
+            <path
+                id="right-stroke"
+                d="M 150,150 C 170,60 210,0 300,0"
+                stroke="white"
+                fill="none"
+                stroke-width="2"
+            />
+
+            <!-- Top line: right to left -->
+            <path
+                id="top-stroke"
+                d="M 300,0 L 0,0"
+                stroke="white"
+                fill="none"
+                stroke-width="2"
+                opacity="0"
             />
         </svg>
 
         <div
             id="splash-text"
-            class="text-white text-[72px] font-semibold tracking-[26px]"
+            class="text-white text-[72px] font-semibold tracking-[26px] ml-[26px]"
         >
             ELEVATE
         </div>
+
+        //reload button
+        <button
+            id="reload-button"
+            class="absolute bottom-4 right-4 bg-slate-200 text-black px-4 py-3 rounded cursor-pointer hover:bg-gray-200 transition-colors duration-300"
+            onclick="location.reload()"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"
+                />
+            </svg>
+        </button>
+
         <script type="module" src="./index.js"></script>
     </body>
 </html>
