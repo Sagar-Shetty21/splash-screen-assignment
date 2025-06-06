@@ -1,21 +1,4 @@
-# Splash Screen Animation
-
-A beautiful, animated splash screen built with HTML, CSS, and JavaScript using GSAP (GreenSock Animation Platform). This project demonstrates advanced web animations including SVG path drawing, gradient fills, and coordinated timing sequences.
-
-## 🎯 Project Overview
-
-This assignment project converts a complex animation sequence into code, featuring:
-
--   **Animated 4-pointed star** with rotation and scaling effects
--   **Dynamic SVG path drawing** using stroke-dasharray animations
--   **Gradient fill animation** with masking techniques
--   **Coordinated timing** for smooth sequence transitions
--   **Fade-in/fade-out effects** for all elements
--   **Responsive design** with Tailwind CSS
-
-## ✨ Animation Features
-
-### Star Animation
+added splash screen animation
 
 -   Starts from left side, scaled down (0.3x)
 -   Moves to center while rotating 180 degrees
