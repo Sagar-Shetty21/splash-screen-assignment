@@ -1,15 +1,17 @@
 {
-  "name": "splash-screen-assignment",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "gsap": "^3.13.0"
-  }
+    "name": "splash-screen-assignment",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "parcel index.html --open",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "@tailwindcss/postcss": "^4.1.8",
+        "gsap": "^3.13.0",
+        "tailwindcss": "^4.1.8"
+    }
 }
